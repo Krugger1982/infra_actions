@@ -51,6 +51,7 @@ jobs:
         with:
           username: ${{ secrets.DOCHERHUB_USERNAME }} 
           password: ${{ secrets.DOCHERHUB_PASSWORD }}
+          # здесь немного искажены названия переменых. Но это совпадает с секретс
       - name: Push to Docker Hub
         # Пуш образа в Docker Hub 
         uses: docker/build-push-action@v2 
