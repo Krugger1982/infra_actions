@@ -63,10 +63,13 @@ jobs:
     needs: build_and_push_to_docker_hub
     steps:
     - name: executing remote ssh commands to deploy
+      # githubActions подает команды на боевой сервер, чтоб развернуть приложение
+      # из готового образа, который уже запушен на докерхаб
       uses: appleboy/ssh-action@master
       with:
+        # переменные которые нужны чтоб давать команды боевому серверу
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
+        username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
           sudo docker pull razumovsky82/infraproject
