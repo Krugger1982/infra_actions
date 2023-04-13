@@ -68,7 +68,6 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_KEY }}
-        # изменен формат ssh-key (в одну строчку)
         script: |
           sudo docker pull razumovsky82/infraproject
           sudo docker stop $(sudo docker ps -a -q)
