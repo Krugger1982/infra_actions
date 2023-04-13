@@ -72,8 +72,8 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo docker pull razumovsky82/infraproject
+          sudo docker pull razumovskiy82/infraproject
           sudo docker stop $(sudo docker ps -a -q)
           # останови все контейнеры. ключ -a означает: "все", -q означает: "список номеров ID"
-          sudo docker run --rm -d -p 5000:5000 razumovsky82/infraproject
-          # ключ --rm означает: "после остаовки контейнер будет автоматически удален"
+          sudo docker run --rm -d -p 5000:5000 razumovskiy82/infraproject
+          # ключ --rm означает: "после остановки контейнер будет автоматически удален"
